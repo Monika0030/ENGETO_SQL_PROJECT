@@ -1,8 +1,10 @@
 ZADÁNÍ PROJEKTU
+
 Na vašem analytickém oddělení nezávislé společnosti, která se zabývá životní úrovní občanů, jste se dohodli, že se pokusíte odpovědět na pár definovaných výzkumných otázek, které adresují dostupnost základních potravin široké veřejnosti. Kolegové již vydefinovali základní otázky, na které se pokusí odpovědět a poskytnout tuto informaci tiskovému oddělení. Toto oddělení bude výsledky prezentovat na následující konferenci zaměřené na tuto oblast.
 Potřebují k tomu od vás připravit robustní datové podklady, ve kterých bude možné vidět porovnání dostupnosti potravin na základě průměrných příjmů za určité časové období.
 Jako dodatečný materiál připravte i tabulku s HDP, GINI koeficientem a populací dalších evropských států ve stejném období, jako primární přehled pro ČR.
 Datové sady, které je možné použít pro získání vhodného datového podkladu
+
 Primární tabulky:
 1.	czechia_payroll – Informace o mzdách v různých odvětvích za několikaleté období. Datová sada pochází z Portálu otevřených dat ČR.
 2.	czechia_payroll_calculation – Číselník kalkulací v tabulce mezd.
@@ -39,10 +41,6 @@ Druhý úkol
 VIEW ms_payroll_foodprice skládá dohromady informace o platech a potravinách, abychom je mohli následně porovnat. 
 VIEW ms_bread_milk_only pak ze stejného VIEW vybírá jen hodnoty pro mléko a chléb, což jsou jediné dvě informace, které nás zajímají. Důvod rozložení do dvou VIEW je pomalost dotazů, pokud bychom vše dali do jednoho souhrnného SELECT. Finální SELECT pak porovnává, kolik kg chleba a kolik litrů mléka si je možné koupit v prvním a posledním dostupném roce mezd.
 
-
-
-
-
 Třetí úkol
 VIEW ms_food_year nabízí informace o cenách potravin v jednotlivých letech. V následném SELECT pak joinujeme tabulku samu se sebou, abychom si vedle sebe mohli porovnat předchozí a současná data. Protože dotaz je pouze na zdražování, přidala jsem podmínku: 
 odchylka musí být >0 (některé potraviny totiž v průběhu let zlevňovaly) a srovnala jsem výsledky podle velikosti odchylky vzestupně.
@@ -60,8 +58,6 @@ V tomto úkolu využijeme VIEW ms_payroll4_3 z minulého úkolu, ve kterém jsme
 Ve VIEW ms_yearlydifferences z těchto hodnot vypočítáme odchylky. 
 Ve VIEW ms_gdp_year si vytvoříme podobnou tabulku jako v sekundárním datovém podkladu. 
 Ve finálném SELECT pak tyto tabulky zkombinujeme a první VIEW zároveň opět joinujeme samo se sebou, abychom mohli vedle sebe zobrazit hodnoty z vice let. 
-
-
 
 
 
